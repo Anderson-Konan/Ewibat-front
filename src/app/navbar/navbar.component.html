@@ -1,0 +1,38 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">Ewibat <span class="sr-only">(current)</span></a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" routerLink="" routerLinkActive="active">Acceuil
+                <span class="sr-only">(current)</span>
+              </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="services" routerLinkActive="active">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a>
+        </li>
+
+      </ul>  
+
+      <ul class="navbar-nav">
+        <li>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" >Connexion</a>
+        </li>
+        <li>
+            <button type="button" id="regist" class="btn btn-danger" routerLink="/signup" routerLinkActive="active">Inscription</button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
