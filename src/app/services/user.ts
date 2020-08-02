@@ -1,5 +1,6 @@
 export class User {
     type:string ="user";
+    code_person:number;
     firstName: string;
     lastName: string;
     tel:string;

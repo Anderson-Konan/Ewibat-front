@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { RegistrationService } from '../services/registration.service';
 import { User } from '../services/user';
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -16,11 +19,22 @@ export class SignupComponent implements OnInit {
   ];
  selectedValue = null;
 
-   user = new User();
-  
-  constructor(private _service: RegistrationService) { }
+   user:User
+   code_person:number;
+
+  constructor(private route: ActivatedRoute,private router: Router, private _service: RegistrationService) { }
 
   ngOnInit() {
+    this.user = new User();
+    this.	code_person = this.route.snapshot.params['code_person'] ;
+    console.log(this.	code_person)
+    this._service.getPerson(this.code_person).subscribe(data =>{
+
+      console.log(data);
+    }, error =>{
+      console.log("Error");
+    }
+    )
   }
 
   registerUser(){
@@ -29,6 +43,16 @@ export class SignupComponent implements OnInit {
     error => console.log("exception occured")
     
   )
+  }
+ 
+  getPerson(){
+    this._service.getPerson(this.code_person).subscribe(data =>{
+      
+      console.log(data);
+    }, error =>{
+      console.log("Error");
+    }
+    )
   }
 
 }

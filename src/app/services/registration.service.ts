@@ -9,13 +9,14 @@ import { HttpClient } from '@angular/common/http';
 export class RegistrationService {
 
   private baseUrl = "http://localhost:8080/persons";
+  
   constructor(private _http :HttpClient) { }
 
   public registraionUserFromRemote(user:User):Observable<any>{
     return this._http.post<any>(this.baseUrl, user);
   }
 
-  public getPerson(id:number):Observable<any>{
-    return this._http.get(`${this.baseUrl}/${id}`);
+  public getPerson(code_person:number):Observable<any>{
+    return this._http.get("http://localhost:8080/persons/"+code_person);
   }
 }

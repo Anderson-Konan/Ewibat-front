@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 
 import { SharedmodelsComponent } from './sharedmodels/sharedmodels.component';
+import { ProfiluserComponent } from './profiluser/profiluser.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { SharedmodelsComponent } from './sharedmodels/sharedmodels.component';
     AppComponent,
     LoginComponent,
   
-    SharedmodelsComponent
+    SharedmodelsComponent,
+  
+    ProfiluserComponent
 
   ],
   imports: [
